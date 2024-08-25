@@ -170,6 +170,10 @@ def profile():
     max_wpm, avg_accuracy = cur.execute("SELECT MAX(wpm), AVG(accuracy) FROM user_data WHERE user_id = ?;", (7, )).fetchall()[0]
     return render_template("profile.html", username=username, max_wpm=round(max_wpm, 2), avg_accuracy=round(avg_accuracy, 2))
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('error.html', message=e), 404
+
 
 
 

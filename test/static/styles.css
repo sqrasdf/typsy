@@ -96,6 +96,15 @@ body {
   border-radius: 5px;
 }
 
+.dropdown-item {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  border-radius: 5px;
+}
+
 #dropdown a:hover {
   background-color: #f1f1f1;
 }

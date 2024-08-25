@@ -32,8 +32,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-
-    color: grey;
 }
 
 #stats {
@@ -64,66 +62,25 @@ body {
 
 #nav {
   position: absolute;
-  top: 0px;
-  right: 0px;
+  top: 30px;
+  right: 30px;
 }
 
-#menu-button {
+.dropdown-item {
   background: none;
   border: none;
   cursor: pointer;
-  color: #888888;
-  font-size: 32px;
-  margin: 30px;
-}
-
-#dropdown {
-  display: none;
-  position: absolute;
-  top: 80px;
-  right: 10px;
-  background-color: #d1d1d1;
-  z-index: 1;
-  min-width: 200px;
-  border-radius: 5px;
-}
-
-#dropdown a {
+  font-size: 24px;
   color: black;
   padding: 12px 16px;
-  text-decoration: none;
   display: block;
   text-align: left;
-  border-radius: 5px;
 }
 
-#dropdown a:hover {
-  background-color: #f1f1f1;
-}
 
-#nav span:focus + #dropdown {
-  display: block;
-}
-
-#dropdown span {
-  background: none;
+.btn {
   border: none;
-  cursor: pointer;
-  padding: 12px 16px;
-  text-align: left;
-  width: 100%;
-  border-radius: 5px;
 }
-
-#dropdown a:hover, #dropdown button:hover {
-  background-color: #f1f1f1;
-}
-
-/* Ukryj dropdown po kliknięciu na inną część strony */
-body:focus-within #dropdown {
-  display: none;
-}
-
 
 .clean {
     color: #888888;
@@ -136,3 +93,12 @@ body:focus-within #dropdown {
     color: red;
 }
 
+input, button {
+  border-radius: 8px;
+  border: none;
+}
+
+input:focus, button:focus {
+  outline-offset: 0px;
+  outline-color: grey;
+}

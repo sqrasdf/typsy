@@ -109,24 +109,9 @@ function removeFocus() {
     document.body.removeChild(tmp);
 }
 
-// Upewnij się, że menu zamyka się po kliknięciu poza nim, ale pozostaje otwarte po kliknięciu wewnątrz dropdown
-window.addEventListener('click', function(event) {
-    if (!dropdown.contains(event.target) && !menuButton.contains(event.target)) {
-        dropdown.style.display = 'none';
-    }
-});
-
-// Przełączaj widoczność dropdown menu
-menuButton.addEventListener('click', function(event) {
-    dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-});
-
-
 
 button.addEventListener("click", getData);
 button.addEventListener("click", removeFocus);
 document.addEventListener("keydown", (event) => checkLetter(event));
 
 getData();
-// dropdown.focus();
-dropdown.blur();
