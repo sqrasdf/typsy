@@ -42,7 +42,7 @@ def get_data():
     cur = con.cursor()
     words = []
     counter = int(cur.execute("SELECT COUNT(*) FROM words;").fetchone()[0]) - 1
-    for i in range(15):
+    for i in range(2):
         res = cur.execute(
             "SELECT word FROM words WHERE id = ?;",
             (randint(0, counter),
@@ -60,10 +60,11 @@ def get_games_data():
         con = sqlite3.connect("database.db")
         cur = con.cursor()
         try:
-            res = cur.execute("SELECT date, wpm, accuracy FROM user_data WHERE user_id = ?;", (7, )).fetchall()
+            res = cur.execute("SELECT date, wpm, accuracy FROM user_data WHERE user_id = ?;", (user_id, )).fetchall()
         except Exception as error:
             return render_template("error.html", message=error)
-        return str(res)
+        # return str(res)
+        return {"response": res}
     return "/get_games_data\nit should not be visible i guess"
     
 
@@ -168,7 +169,7 @@ def profile():
     cur = con.cursor()
     username = cur.execute("SELECT username FROM users WHERE id = ?;", (user_id, )).fetchone()[0]
     max_wpm, avg_accuracy = cur.execute("SELECT MAX(wpm), AVG(accuracy) FROM user_data WHERE user_id = ?;", (7, )).fetchall()[0]
-    return render_template("profile.html", username=username, max_wpm=round(max_wpm, 2), avg_accuracy=round(avg_accuracy, 2))
+    return render_template("profile.html", username=username, max_wpm=round(max_wpm, 2), avg_accuracy=round(avg_accuracy, 2), user_id=user_id)
 
 @app.errorhandler(404)
 def page_not_found(e):

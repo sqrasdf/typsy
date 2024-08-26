@@ -8,9 +8,13 @@ import sqlite3
 con = sqlite3.connect("database.db")
 cur = con.cursor()
 
-res = cur.execute("SELECT ROUND(wpm, 0), accuracy FROM user_data WHERE user_id = ?;", (7, )).fetchall()
-for row in res:
-    print(row)
+res = cur.execute("SELECT date, wpm, accuracy FROM user_data WHERE user_id = ?;", (7, )).fetchall()
+print(res)
+print(type(res))
+
+# res = cur.execute("SELECT ROUND(wpm, 0), accuracy FROM user_data WHERE user_id = ?;", (7, )).fetchall()
+# for row in res:
+#     print(row)
 
 # username = cur.execute("SELECT username FROM users WHERE id = ?;", (7, )).fetchone()[0]
 # print(username)

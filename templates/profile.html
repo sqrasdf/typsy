@@ -2,14 +2,14 @@
 
 {% block head %}
 
-<script src="static/profile.js" defer></script>
 
 <script>
     let user_id;
     {% if user_id %}
-        let user_id = {{ user_id }};
+        user_id = {{ user_id }};
     {% endif %}
 </script>
+<script src="../static/profile.js" defer></script>
 
 {% endblock %}
 
@@ -28,8 +28,11 @@
             Average accuracy: {{ avg_accuracy }}
         </div>
     </div>
-    <button id="get_games_data_button">Get data about games</button>
-    <div id="games_data">
+    <div>
+        <button id="get_games_data_button" class="px-4">Get data about games</button>
+    </div>
+    <div id="games_data" style="display: inline-block;">
     </div>
 </div>
+
 {% endblock %}

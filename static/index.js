@@ -76,6 +76,7 @@ function checkLetter(event) {
             current_span.className = "correct";
             // end game
             if (current_index + 1 === words.length){
+                console.log("end game");
                 // display wpm
                 let sec_diff = (Date.now() - startTime) / 1000;
                 let wpm = words_count / (sec_diff / 60);
@@ -87,6 +88,7 @@ function checkLetter(event) {
 
                 // send wpm and accuracy to the server
                 if (user_id) {
+                    console.log("sending data to server");
                     sendData(wpm, accuracy);
                 }
 
