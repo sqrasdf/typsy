@@ -42,7 +42,7 @@ def get_data():
     cur = con.cursor()
     words = []
     counter = int(cur.execute("SELECT COUNT(*) FROM words;").fetchone()[0]) - 1
-    for i in range(2):
+    for i in range(15):
         res = cur.execute(
             "SELECT word FROM words WHERE id = ?;",
             (randint(0, counter),
