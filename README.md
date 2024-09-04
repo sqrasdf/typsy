@@ -1,5 +1,6 @@
 # Typsy
 #### Video Demo:  [HERE](https://www.youtube.com/watch?v=KgXuv5290oQ)
+#### Site is available: [HERE](https://typsy.pythonanywhere.com)
 #### Description
 Typsy - a minimalist typing practice app
 
